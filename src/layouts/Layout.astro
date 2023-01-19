@@ -8,12 +8,6 @@ export interface Props {
 }
 
 const { title } = Astro.props;
-
-let cookiesAccepted = false;
-
-if (Astro.cookies.has('acccepted')) {
-  cookiesAccepted = true;
-}
 ---
 
 <!DOCTYPE html>
@@ -29,7 +23,7 @@ if (Astro.cookies.has('acccepted')) {
     <Header />
     <slot />
     <Footer />
-    {!cookiesAccepted && <CookieBanner />}
+    <CookieBanner client:only />
   </body>
 </html>
 <style is:global>
