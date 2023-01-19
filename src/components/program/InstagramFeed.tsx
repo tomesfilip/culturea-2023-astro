@@ -1,6 +1,5 @@
 const res = await fetch(
-  `https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,media_type,permalink&access_token=${
-    import.meta.env.INSTAGRAM_TOKEN
+  `https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,media_type,permalink&access_token=
   }`,
   { cache: 'no-store' }
 );
