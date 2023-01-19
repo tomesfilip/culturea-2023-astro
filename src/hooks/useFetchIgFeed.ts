@@ -17,8 +17,6 @@ const useFetchRecipeList = () => {
           { cache: 'no-store' }
         );
 
-        console.log(res);
-
         const { data } = await res.json();
 
         const ighotoFeed = data.filter(
