@@ -1,4 +1,5 @@
 ---
+import CookieBanner from '../components/shared/CookieBanner';
 import Footer from '../components/shared/Footer';
 import Header from '../components/shared/Header';
 
@@ -7,6 +8,12 @@ export interface Props {
 }
 
 const { title } = Astro.props;
+
+let cookiesAccepted = false;
+
+if (Astro.cookies.has('acccepted')) {
+  cookiesAccepted = true;
+}
 ---
 
 <!DOCTYPE html>
@@ -22,6 +29,7 @@ const { title } = Astro.props;
     <Header />
     <slot />
     <Footer />
+    <CookieBanner />
   </body>
 </html>
 <style is:global>
