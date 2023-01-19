@@ -29,7 +29,7 @@ if (Astro.cookies.has('acccepted')) {
     <Header />
     <slot />
     <Footer />
-    <CookieBanner />
+    {!cookiesAccepted && <CookieBanner />}
   </body>
 </html>
 <style is:global>
