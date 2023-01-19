@@ -1,0 +1,76 @@
+---
+import Footer from '../components/shared/Footer';
+import Header from '../components/shared/Header';
+
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/culturea-logo.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header />
+    <slot />
+    <Footer />
+  </body>
+</html>
+<style is:global>
+  @font-face {
+    font-family: GalanoGrotesqueBold;
+    src: url('../assets/fonts/GalanoGrotesqueBold.woff2') format('woff2');
+    font-display: swap;
+    font-weight: 700;
+  }
+
+  @font-face {
+    font-family: GalanoGrotesqueRegular;
+    src: url('../assets/fonts/GalanoGrotesqueMedium.woff2') format('woff2');
+    font-display: swap;
+    font-weight: 500;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: GalanoGrotesqueRegular;
+    font-display: swap;
+  }
+
+  h2,
+  h3 {
+    font-size: 33px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: GalanoGrotesqueBold;
+  }
+
+  @media only screen and (min-width: 728px) {
+    h2 {
+      font-size: 64px;
+    }
+
+    h3 {
+      font-size: 45px;
+    }
+  }
+</style>

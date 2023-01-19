@@ -1,0 +1,29 @@
+.swiper {
+  width: 100%;
+  margin-top: 4rem;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+
+.swiper-button-prev {
+  background-image: url('../src/assets/img/icons/galleryArrowLeft.svg');
+  left: 0;
+}
+
+.swiper-button-next {
+  background-image: url('../src/assets/img/icons/galleryArrowRight.svg');
+  right: 0;
+}
+
+.swiper-button-next, .swiper-button-prev {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.swiper-button-next::after, .swiper-button-prev::after {
+  display: none;
+}

@@ -1,0 +1,20 @@
+.dashed-border {
+  transform: scale(var(--ggs,1));
+}
+
+.dashed-border,
+.dashed-border::before {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 2rem;
+}
+
+.dashed-border::before {
+  content: "";
+  position: absolute;
+  height: 4px;
+  top: 12px;
+  border-top: 12px dashed
+}

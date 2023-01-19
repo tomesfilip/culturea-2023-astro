@@ -1,0 +1,27 @@
+---
+import PartnerList from '../components/partners/PartnerList';
+import Section from '../components/shared/Section';
+import Layout from '../layouts/Layout.astro';
+
+import { partnerList } from '../../src/data/partners';
+---
+
+<Layout title="Culturea 2023">
+  <Section sectionId="general" sectionName="GENERÁLNÍ PARTNER">
+    <></>
+  </Section>
+  <Section sectionId="main" sectionName="HLAVNÍ PARTNEŘI">
+    <></>
+  </Section>
+  <Section sectionId="partners" sectionName="PARTNEŘI">
+    <PartnerList partners={partnerList} />
+  </Section>
+  <Section sectionId="medial-partners" sectionName="MEDIÁLNÍ PARTNEŘI">
+    <></>
+  </Section>
+  <Section sectionId="cinema-partners" sectionName="PARTNEŘI JARNÍHO KINA">
+    <></>
+  </Section>
+</Layout>
+
+<style></style>
