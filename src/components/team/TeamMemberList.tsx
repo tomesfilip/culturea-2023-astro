@@ -43,6 +43,7 @@ const TeamMemberList = ({ teamMembers }: Props) => {
               src={teamMember.img}
               width={400}
               height={500}
+              loading="lazy"
               alt={teamMember.name}
             />
             <figcaption className="py-2 text-lg font-bold text-white bg-flushOrange">

@@ -20,6 +20,7 @@ const InstagramFeed = () => {
               <img
                 width={250}
                 height={250}
+                loading="lazy"
                 src={feedItem.media_url}
                 alt={feedItem.caption}
               />

@@ -1,12 +1,12 @@
 import type { TTeamMemberItem } from '../lib/types/TTeamMemberItem';
 
-import imgAlzbetaBlahova from '../assets/img/team/alzbeta-blahova.jpg';
-import imgAndreaZylova from '../assets/img/team/andrea-zylova.jpg';
-import imgHelenaPham from '../assets/img/team/helena-pham.jpg';
-import imgLucieMakovska from '../assets/img/team/lucie-makovska.jpg';
-import imgSimonValovic from '../assets/img/team/simon-valovic.jpg';
-import imgTerezaSimova from '../assets/img/team/tereza-simova.jpg';
-import imgVendulaKorinkova from '../assets/img/team/vendula-korinkova.jpg';
+import imgAlzbetaBlahova from '../assets/img/team/alzbeta-blahova.webp';
+import imgAndreaZylova from '../assets/img/team/andrea-zylova.webp';
+import imgHelenaPham from '../assets/img/team/helena-pham.webp';
+import imgLucieMakovska from '../assets/img/team/lucie-makovska.webp';
+import imgSimonValovic from '../assets/img/team/simon-valovic.webp';
+import imgTerezaSimova from '../assets/img/team/tereza-simova.webp';
+import imgVendulaKorinkova from '../assets/img/team/vendula-korinkova.webp';
 
 export const teamMemberItems: TTeamMemberItem[] = [
   {
