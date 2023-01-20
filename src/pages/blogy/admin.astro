@@ -1,0 +1,15 @@
+---
+import BackToMainPageLink from '../../components/blogs/BackToMainPageLink';
+import BlogAuthForm from '../../components/blogs/BlogAuthForm';
+import Section from '../../components/shared/Section';
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Culturea 2023 - Úprava blogů">
+  <Section sectionId="blog-create" sectionName="Blogy - úprava">
+    <BlogAuthForm client:only />
+    <BackToMainPageLink />
+  </Section>
+</Layout>
+
+<style></style>
