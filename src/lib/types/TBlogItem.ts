@@ -1,5 +1,10 @@
 export type TBlogItem = {
-  headline: string;
-  imageLink: string;
-  text: string;
+  id: string;
+  author: string;
+  bannerImage: string;
+  body: string;
+  brief: string;
+  category: string;
+  createdAt: string;
+  title: string;
 };

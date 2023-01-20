@@ -1,11 +1,17 @@
 import type { TBlogItem } from '../../lib/types/TBlogItem';
 
-const BlogItem = ({ headline, imageLink, text }: TBlogItem) => {
+interface Props {
+  blog: TBlogItem;
+}
+
+const BlogItem = ({ blog }: Props) => {
   return (
     <article>
-      <h2>{headline}</h2>
-      <img src={imageLink} alt={headline} />
-      <p>{text}</p>
+      <a href={`/blogy/${blog.id}`}>
+        <h3>{blog.title}</h3>
+        <p>{blog.brief}</p>
+        <img src={blog.bannerImage} alt={blog.title} width={300} height={300} />
+      </a>
     </article>
   );
 };
