@@ -9,12 +9,12 @@
 }
 
 .swiper-button-prev {
-  background-image: url('../src/assets/img/icons/galleryArrowLeft.svg');
+  background-image: url('../assets/img/icons/swiper-arrow-left.svg');
   left: 0;
 }
 
 .swiper-button-next {
-  background-image: url('../src/assets/img/icons/galleryArrowRight.svg');
+  background-image: url('../assets/img/icons/swiper-arrow-right.svg');
   right: 0;
 }
 
