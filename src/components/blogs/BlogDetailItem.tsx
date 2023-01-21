@@ -1,4 +1,5 @@
 import useFetchBlog from '../../hooks/useFetchBlog';
+import type { TBlogItem } from '../../lib/types/TBlogItem';
 
 interface Props {
   blogId: string;
