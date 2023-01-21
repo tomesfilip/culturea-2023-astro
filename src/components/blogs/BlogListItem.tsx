@@ -4,7 +4,7 @@ interface Props {
   blog: TBlogItem;
 }
 
-const BlogItem = ({ blog }: Props) => {
+const BlogListItem = ({ blog }: Props) => {
   return (
     <article>
       <a href={`/blogy/${blog.id}`}>
@@ -16,4 +16,4 @@ const BlogItem = ({ blog }: Props) => {
   );
 };
 
-export default BlogItem;
+export default BlogListItem;
