@@ -1,10 +1,12 @@
 import useFetchBlogList from '../../hooks/useFetchBlogList';
+import useMonitorAuthUser from '../../hooks/useMonitorAuthUser';
 
 import type { TBlogItem } from '../../lib/types/TBlogItem';
 import BlogListItem from './BlogListItem';
 
 const BlogList = () => {
   const { data: blogs, isLoading, error } = useFetchBlogList();
+  const { loggedUser } = useMonitorAuthUser();
 
   return (
     <>

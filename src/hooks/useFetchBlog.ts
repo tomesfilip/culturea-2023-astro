@@ -2,7 +2,6 @@ import { doc, getDoc } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 
 import { db } from '../config/firebase';
-import type { TBlogItem } from '../lib/types/TBlogItem';
 
 const useFetchBlog = (documentId: string) => {
   const [data, setData] = useState<any>(null);
