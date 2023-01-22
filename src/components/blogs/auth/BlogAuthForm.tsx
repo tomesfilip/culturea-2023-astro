@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { auth } from '../../../config/firebase';
 import { authErrorMap } from '../../../data/authErrorMap';
 import { isAuthModalOpen } from '../../../stores/authModalStore';
+import ModalHeader from '../../modal/ModalHeader';
 import ModalOverlay from '../../shared/ModalOverlay';
 import LabelledInput from '../LabelledInput';
 import BlogAuthFormHeader from './BlogAuthFormHeader';
@@ -40,7 +41,7 @@ const BlogAuthForm = () => {
         onSubmit={(e) => handleSubmit(e)}
         className="flex flex-col items-center flex-wrap gap-y-4 absolute w-[90%] md:w-[30vw] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-4 z-20"
       >
-        <BlogAuthFormHeader />
+        <ModalHeader closeModal={() => isAuthModalOpen.set(false)} />
         <LabelledInput
           name="email"
           type="email"
