@@ -1,10 +1,10 @@
 import { useStore } from '@nanostores/react';
-import { signOut } from 'firebase/auth';
-import { auth } from '../../../config/firebase';
 import useMonitorAuthUser from '../../../hooks/useMonitorAuthUser';
 import { isAuthModalOpen } from '../../../stores/authModalStore';
-import BlogAuthButton from './BlogAuthButton';
+import ActionBlogButton from '../admin/ActionBlogButton';
 import BlogAuthForm from './BlogAuthForm';
+import BlogAuthLoginButton from './BlogAuthLoginButton';
+import BlogAuthLogoutButton from './BlogAuthLogoutButton';
 
 interface Props {
   children: React.ReactNode;
@@ -14,25 +14,24 @@ const BlogAuthWrapper = ({ children }: Props) => {
   const $isAuthModalOpen = useStore(isAuthModalOpen);
   const { loggedUser, isLoading, error } = useMonitorAuthUser();
 
-  const logout = async () => {
-    try {
-      await signOut(auth);
-    } catch (error) {
-      console.log(`Sign out error: ${error}`);
-    }
-  };
-
   return (
     <>
       {isAuthModalOpen.get() && <BlogAuthForm />}
       {children}
-      {loggedUser ? (
-        <BlogAuthButton onClick={() => logout()}>Odhlásit se</BlogAuthButton>
-      ) : (
-        <BlogAuthButton onClick={() => isAuthModalOpen.set(true)}>
-          Přihlásit se
-        </BlogAuthButton>
-      )}
+      <div className="auth-action-buttons flex flex-col fixed gap-y-4 bottom-4 right-4">
+        {loggedUser ? (
+          <>
+            <ActionBlogButton
+              onClick={() => console.log('opening form for adding blog')}
+            >
+              Přidat blog
+            </ActionBlogButton>
+            <BlogAuthLogoutButton />
+          </>
+        ) : (
+          <BlogAuthLoginButton />
+        )}
+      </div>
     </>
   );
 };
