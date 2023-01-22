@@ -1,8 +1,8 @@
 import { useStore } from '@nanostores/react';
 import { signOut } from 'firebase/auth';
 import { auth } from '../../../config/firebase';
+import useMonitorAuthUser from '../../../hooks/useMonitorAuthUser';
 import { isAuthModalOpen } from '../../../stores/authModalStore';
-import { user } from '../../../stores/userStore';
 import BlogAuthButton from './BlogAuthButton';
 import BlogAuthForm from './BlogAuthForm';
 
@@ -12,7 +12,7 @@ interface Props {
 
 const BlogAuthWrapper = ({ children }: Props) => {
   const $isAuthModalOpen = useStore(isAuthModalOpen);
-  const $user = useStore(user);
+  const { loggedUser, isLoading, error } = useMonitorAuthUser();
 
   const logout = async () => {
     try {
@@ -26,7 +26,7 @@ const BlogAuthWrapper = ({ children }: Props) => {
     <>
       {isAuthModalOpen.get() && <BlogAuthForm />}
       {children}
-      {user.get() ? (
+      {loggedUser ? (
         <BlogAuthButton onClick={() => logout()}>Odhlásit se</BlogAuthButton>
       ) : (
         <BlogAuthButton onClick={() => isAuthModalOpen.set(true)}>
