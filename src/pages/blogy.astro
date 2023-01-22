@@ -1,11 +1,8 @@
 ---
-import BlogList from '../components/blogs/BlogList';
-import Section from '../components/shared/Section';
+import BlogPageContent from '../components/blogs/BlogPageContent';
 import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Culturea 2023 - Blogy">
-  <Section sectionId="blogy" sectionName="Blogy">
-    <BlogList client:only />
-  </Section>
+  <BlogPageContent client:only />
 </Layout>
