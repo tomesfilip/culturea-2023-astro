@@ -1,7 +1,10 @@
+import { useStore } from '@nanostores/react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useState } from 'react';
 import { auth } from '../../../config/firebase';
 import { authErrorMap } from '../../../data/authErrorMap';
+import { isAuthModalOpen } from '../../../stores/authModalStore';
+import { user } from '../../../stores/userStore';
 import LabelledInput from '../LabelledInput';
 import BlogAuthFormHeader from './BlogAuthFormHeader';
 
@@ -10,16 +13,20 @@ const BlogAuthForm = () => {
   const [password, setPassword] = useState<string>('');
   const [authError, setAuthError] = useState<string>('');
 
+  const $user = useStore(user);
+  const $isAuthModalOpen = useStore(isAuthModalOpen);
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        const user = userCredential.user;
-        console.log(user.toJSON());
+        user.set(userCredential.user);
         setAuthError('');
+        isAuthModalOpen.set(false);
       })
       .catch((error) => {
+        console.log(error.message);
         const errorKey =
           Object.keys(authErrorMap).find((key) =>
             error.message.includes(key)
