@@ -1,6 +1,6 @@
 import { useStore } from '@nanostores/react';
 import { addDoc, collection } from 'firebase/firestore';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { blogCollectionRef, db } from '../../../config/firebase';
 
 import { isCreateBlogModalOpen } from '../../../stores/createBlogModalStore';

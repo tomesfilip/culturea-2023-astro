@@ -1,7 +1,7 @@
-import { useStore } from '@nanostores/react';
+import { useState } from 'react';
+
 import useMonitorAuthUser from '../../hooks/useMonitorAuthUser';
 import type { TBlogItem } from '../../lib/types/TBlogItem';
-import { isDetailModalOpen } from '../../stores/detailModalStore';
 import EditDeleteActions from './admin/EditDeleteActions';
 import BlogDetailModal from './BlogDetailModal';
 
@@ -11,12 +11,12 @@ interface Props {
 
 const BlogListItem = ({ blog }: Props) => {
   const { loggedUser } = useMonitorAuthUser();
-  const $isDetailModalOpen = useStore(isDetailModalOpen);
+  const [isDetailModalOpen, setIsDetailModalOpen] = useState(false);
 
   return (
     <>
       <article
-        onClick={() => isDetailModalOpen.set(true)}
+        onClick={() => setIsDetailModalOpen(true)}
         className="cursor-pointer"
       >
         <h4 className="text-xl text-center mb-1 font-bold">{blog.title}</h4>
@@ -29,7 +29,12 @@ const BlogListItem = ({ blog }: Props) => {
         />
         {loggedUser && <EditDeleteActions />}
       </article>
-      {isDetailModalOpen.get() && <BlogDetailModal blog={blog} />}
+      {isDetailModalOpen && (
+        <BlogDetailModal
+          blog={blog}
+          closeModalOnClick={() => setIsDetailModalOpen(false)}
+        />
+      )}
     </>
   );
 };
