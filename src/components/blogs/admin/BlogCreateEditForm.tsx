@@ -1,5 +1,7 @@
 import { useStore } from '@nanostores/react';
-import { useState } from 'react';
+import { addDoc, collection } from 'firebase/firestore';
+import React, { useState } from 'react';
+import { blogCollectionRef, db } from '../../../config/firebase';
 
 import { isCreateBlogModalOpen } from '../../../stores/createBlogModalStore';
 import ModalHeader from '../../modal/ModalHeader';
@@ -13,9 +15,25 @@ const BlogCreateEditForm = () => {
   const [title, setTitle] = useState<string>('');
   const [body, setBody] = useState<string>('');
 
+  const createBlog = async () => {
+    await addDoc(blogCollectionRef, {
+      title: title,
+      body: body,
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    await createBlog();
+    isCreateBlogModalOpen.set(false);
+  };
+
   return (
     <ModalOverlay>
-      <form className="flex flex-col flex-wrap gap-y-4 absolute w-[90%] md:w-[30vw] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-4 z-20">
+      <form
+        onSubmit={(e) => handleSubmit(e)}
+        className="flex flex-col flex-wrap gap-y-4 absolute w-[90%] md:w-[30vw] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-4 z-20"
+      >
         <ModalHeader closeModal={() => isCreateBlogModalOpen.set(false)} />
         <h4 className="text-xl text-center">Přidat blog</h4>
         <LabelledInput
@@ -36,10 +54,7 @@ const BlogCreateEditForm = () => {
             required={true}
           />
         </div>
-        <button
-          className="bg-flushOrange px-2 py-1 text-xl text-white rounded-lg max-w-max self-center"
-          onClick={() => console.log('adding blog')}
-        >
+        <button className="bg-flushOrange px-2 py-1 text-xl text-white rounded-lg max-w-max self-center">
           Uveřejnit blog
         </button>
       </form>

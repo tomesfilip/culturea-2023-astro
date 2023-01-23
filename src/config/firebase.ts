@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
-import { addDoc, collection, getDocs, getFirestore } from 'firebase/firestore';
+import { collection, getFirestore } from 'firebase/firestore';
 
 const firebaseApp = initializeApp({
   apiKey: import.meta.env.PUBLIC_FIREBASE_API_KEY,
@@ -14,3 +14,4 @@ const firebaseApp = initializeApp({
 
 export const db = getFirestore(firebaseApp);
 export const auth = getAuth(firebaseApp);
+export const blogCollectionRef = collection(db, 'blog-articles');

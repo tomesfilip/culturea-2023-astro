@@ -1,7 +1,7 @@
 import { collection, getDocs } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 
-import { db } from '../config/firebase';
+import { blogCollectionRef, db } from '../config/firebase';
 
 const useFetchBlogList = () => {
   const [data, setData] = useState<any>(null);
@@ -13,7 +13,7 @@ const useFetchBlogList = () => {
 
     const getData = async () => {
       try {
-        const snapshot = await getDocs(collection(db, 'blog-articles'));
+        const snapshot = await getDocs(blogCollectionRef);
 
         setData(
           snapshot.docs.map((doc) => {
