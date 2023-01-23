@@ -1,7 +1,9 @@
 import { useStore } from '@nanostores/react';
 import { addDoc, collection } from 'firebase/firestore';
-import { useState } from 'react';
-import { blogCollectionRef, db } from '../../../config/firebase';
+import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
+import { useEffect, useState } from 'react';
+import { v4 } from 'uuid';
+import { blogCollectionRef, db, storage } from '../../../config/firebase';
 
 import { isCreateBlogModalOpen } from '../../../stores/createBlogModalStore';
 import ModalHeader from '../../modal/ModalHeader';
@@ -14,11 +16,30 @@ const BlogCreateEditForm = () => {
 
   const [title, setTitle] = useState<string>('');
   const [body, setBody] = useState<string>('');
+  const [imageUpload, setImageUpload] = useState<File | null>(null);
+  const [imgUrl, setImageUrl] = useState<string | null>(null);
+
+  // TODO: add a loading and error indicator
+  // TODO: move logic methods into separate files
+  const uploadImage = async () => {
+    if (!imageUpload) {
+      return;
+    }
+    try {
+      const imageRef = ref(storage, `images/${imageUpload.name + v4()}`);
+      const res = await uploadBytes(imageRef, imageUpload);
+      const uploadedImgUrl = await getDownloadURL(res.ref);
+      setImageUrl(uploadedImgUrl);
+    } catch (error) {
+      console.log('File upload error: ' + error);
+    }
+  };
 
   const createBlog = async () => {
     await addDoc(blogCollectionRef, {
       title: title,
       body: body,
+      bannerImage: imgUrl,
     });
   };
 
@@ -27,6 +48,12 @@ const BlogCreateEditForm = () => {
     await createBlog();
     isCreateBlogModalOpen.set(false);
   };
+
+  useEffect(() => {
+    if (imageUpload) {
+      uploadImage();
+    }
+  }, [imageUpload]);
 
   return (
     <ModalOverlay>
@@ -54,6 +81,13 @@ const BlogCreateEditForm = () => {
             required={true}
           />
         </div>
+        <LabelledInput
+          name="image"
+          type="file"
+          onChange={(e) => setImageUpload(e.target.files[0])}
+          required={true}
+          text="Obrázek"
+        />
         <button className="bg-flushOrange px-2 py-1 text-xl text-white rounded-lg max-w-max self-center">
           Uveřejnit blog
         </button>

@@ -1,7 +1,7 @@
 interface Props {
   type: string;
   name: string;
-  value: string;
+  value?: string;
   onChange: (e: any) => void;
   required: boolean;
   text: string;
