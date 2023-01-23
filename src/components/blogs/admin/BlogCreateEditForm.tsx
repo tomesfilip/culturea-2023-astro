@@ -18,6 +18,7 @@ const BlogCreateEditForm = () => {
   const [body, setBody] = useState<string>('');
   const [imageUpload, setImageUpload] = useState<File | null>(null);
   const [imgUrl, setImageUrl] = useState<string | null>(null);
+  const [error, setError] = useState<string>('');
 
   // TODO: add a loading and error indicator
   // TODO: move logic methods into separate files
@@ -36,11 +37,17 @@ const BlogCreateEditForm = () => {
   };
 
   const createBlog = async () => {
+    if (!title) return setError('Chybějící název blogu.');
+    if (!body) return setError('Chybějíci text blogu.');
+    if (!imgUrl) return setError('Chybějící obrázek blogu.');
+
     await addDoc(blogCollectionRef, {
       title: title,
       body: body,
       bannerImage: imgUrl,
     });
+
+    setError('');
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -91,6 +98,7 @@ const BlogCreateEditForm = () => {
         <button className="bg-flushOrange px-2 py-1 text-xl text-white rounded-lg max-w-max self-center">
           Uveřejnit blog
         </button>
+        {error && <p className="text-red-500">{error}</p>}
       </form>
     </ModalOverlay>
   );
