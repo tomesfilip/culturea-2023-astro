@@ -24,7 +24,7 @@ const LabelledInput = ({
         id={name}
         value={value}
         onChange={onChange}
-        className="border-black border-[1px] outline-none p-1 rounded-lg"
+        className="border-black border-[1px] outline-none p-1 rounded-lg w-full"
         required={required}
       />
     </div>
