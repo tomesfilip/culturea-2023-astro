@@ -14,7 +14,7 @@ const BlogListItem = ({ blog }: Props) => {
   const [isDetailModalOpen, setIsDetailModalOpen] = useState(false);
 
   return (
-    <>
+    <div className="flex flex-col">
       <article
         onClick={() => setIsDetailModalOpen(true)}
         className="cursor-pointer"
@@ -27,15 +27,15 @@ const BlogListItem = ({ blog }: Props) => {
           width={300}
           height={300}
         />
-        {loggedUser && <EditDeleteActions />}
       </article>
+      {loggedUser && <EditDeleteActions />}
       {isDetailModalOpen && (
         <BlogDetailModal
           blog={blog}
           closeModalOnClick={() => setIsDetailModalOpen(false)}
         />
       )}
-    </>
+    </div>
   );
 };
 
