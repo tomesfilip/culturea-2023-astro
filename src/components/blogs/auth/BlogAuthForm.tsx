@@ -1,4 +1,3 @@
-import { useStore } from '@nanostores/react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useState } from 'react';
 import { auth } from '../../../config/firebase';
@@ -7,14 +6,11 @@ import { isAuthModalOpen } from '../../../stores/authModalStore';
 import ModalHeader from '../../modal/ModalHeader';
 import ModalOverlay from '../../shared/ModalOverlay';
 import LabelledInput from '../LabelledInput';
-import BlogAuthFormHeader from './BlogAuthFormHeader';
 
 const BlogAuthForm = () => {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [authError, setAuthError] = useState<string>('');
-
-  const $isAuthModalOpen = useStore(isAuthModalOpen);
 
   const login = async () => {
     try {

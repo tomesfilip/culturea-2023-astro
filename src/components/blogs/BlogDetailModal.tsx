@@ -25,7 +25,7 @@ const BlogDetailModal = ({ blog, closeModalOnClick }: Props) => {
           height={300}
         />
         <p>{blog.brief}</p>
-        {loggedUser && <EditDeleteActions docId={blog.id} />}
+        {loggedUser && <EditDeleteActions blogId={blog.id} />}
       </div>
       )
     </ModalOverlay>

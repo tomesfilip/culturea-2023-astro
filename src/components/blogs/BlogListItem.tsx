@@ -28,7 +28,7 @@ const BlogListItem = ({ blog }: Props) => {
           height={300}
         />
       </article>
-      {loggedUser && <EditDeleteActions docId={blog.id} />}
+      {loggedUser && <EditDeleteActions blogId={blog.id} />}
       {isDetailModalOpen && (
         <BlogDetailModal
           blog={blog}
