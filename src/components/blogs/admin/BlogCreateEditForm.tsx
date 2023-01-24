@@ -44,6 +44,7 @@ const BlogCreateEditForm = () => {
       title: title,
       body: body,
       bannerImage: imgUrl,
+      createdAt: new Date(),
     });
 
     setError('');
@@ -113,7 +114,7 @@ const BlogCreateEditForm = () => {
           required={true}
           text="Název"
         />
-        <div className="flex gap-2">
+        <div className="grid gap-2">
           <p>Text</p>
           <textarea
             className="border-[1px] border-black rounded-lg w-full p-1"

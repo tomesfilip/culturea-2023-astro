@@ -16,7 +16,7 @@ const LabelledInput = ({
   text,
 }: Props) => {
   return (
-    <div className="flex gap-x-2 items-center">
+    <div className="grid gap-2 items-center">
       <label htmlFor={name}>{text}</label>
       <input
         type={type}

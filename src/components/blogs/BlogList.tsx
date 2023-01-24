@@ -5,6 +5,8 @@ import BlogListItem from './BlogListItem';
 const BlogList = () => {
   const { data: blogs, isLoading, error } = useFetchBlogList();
 
+  console.log(error);
+
   return (
     <>
       {isLoading && <p>Loading...</p>}
