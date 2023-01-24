@@ -1,4 +1,4 @@
-import { getDocs } from 'firebase/firestore';
+import { getDocs, orderBy, query } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 
 import { blogCollectionRef } from '../config/firebase';
@@ -13,7 +13,12 @@ const useFetchBlogList = () => {
 
     const getData = async () => {
       try {
-        const snapshot = await getDocs(blogCollectionRef);
+        const blogQueryOrderedLimit = query(
+          blogCollectionRef,
+          orderBy('createdAt', 'desc')
+        );
+
+        const snapshot = await getDocs(blogQueryOrderedLimit);
 
         setData(
           snapshot.docs.map((doc) => {
