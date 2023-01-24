@@ -6,6 +6,7 @@ import { v4 } from 'uuid';
 import { blogCollectionRef, storage } from '../../../config/firebase';
 import { isCreateModalOpen } from '../../../stores/createModalStore';
 import { editBlogStore } from '../../../stores/editBlogStore';
+import { getDocRef } from '../../../utils/getBlogRef';
 import ModalHeader from '../../modal/ModalHeader';
 import ModalOverlay from '../../shared/ModalOverlay';
 import LabelledInput from '../LabelledInput';
@@ -54,7 +55,8 @@ const BlogCreateEditForm = () => {
     if (!imgUrl) return setError('Chybějící obrázek blogu.');
 
     try {
-      await updateDoc(blog, {
+      const blogRef = getDocRef(blog.blogId);
+      await updateDoc(blogRef, {
         title: title,
         body: body,
         bannerImage: imgUrl,

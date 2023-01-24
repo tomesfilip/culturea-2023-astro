@@ -24,7 +24,7 @@ const EditDeleteActions = ({ blogId }: Props) => {
       const docRef = getDocRef(blogId);
       const docData = await getDoc(docRef);
       if (!docData.data()) return;
-      editBlogStore.set(docData.data());
+      editBlogStore.set({ ...docData.data(), blogId });
       isCreateModalOpen.set(true);
     } catch (error) {
       console.log('Error during editing: ' + error);
