@@ -1,4 +1,4 @@
-import { deleteDoc, doc, getDoc } from 'firebase/firestore';
+import { deleteDoc, getDoc } from 'firebase/firestore';
 import { isCreateModalOpen } from '../../../stores/createModalStore';
 import { editBlogStore } from '../../../stores/editBlogStore';
 import { getDocRef } from '../../../utils/getBlogRef';

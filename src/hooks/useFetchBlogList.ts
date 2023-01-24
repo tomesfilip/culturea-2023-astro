@@ -1,7 +1,7 @@
-import { collection, getDocs } from 'firebase/firestore';
+import { getDocs } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 
-import { blogCollectionRef, db } from '../config/firebase';
+import { blogCollectionRef } from '../config/firebase';
 
 const useFetchBlogList = () => {
   const [data, setData] = useState<any>(null);
