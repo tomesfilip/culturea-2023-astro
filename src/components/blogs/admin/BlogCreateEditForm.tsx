@@ -71,6 +71,7 @@ const BlogCreateEditForm = () => {
     if (blog) {
       editBlogStore.set(undefined);
     }
+    window.location.reload();
   };
 
   useEffect(() => {
