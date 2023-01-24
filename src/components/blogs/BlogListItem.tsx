@@ -21,7 +21,7 @@ const BlogListItem = ({ blog }: Props) => {
       >
         <h4 className="text-xl text-center mb-1 font-bold">{blog.title}</h4>
         <img
-          className="rounded-lg"
+          className="w-[300px] h-[300px] rounded-lg object-cover"
           src={blog.bannerImage}
           alt={blog.title}
           width={300}
