@@ -1,9 +1,10 @@
+import MapSvg from '../components/map/MapSvg';
 import Section from '../components/shared/Section';
 
 const SectionMap = () => {
   return (
-    <Section sectionId="mapa" sectionName="Mapa festivalu">
-      <></>
+    <Section sectionId="mapa" sectionName="Minulé ročníky">
+      <MapSvg />
     </Section>
   );
 };
