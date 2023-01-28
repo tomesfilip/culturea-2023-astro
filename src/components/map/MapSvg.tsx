@@ -4,7 +4,7 @@ const MapSvg = () => {
   const [countryTooltip, setCountryTooltip] = useState<string | null>(null);
 
   return (
-    <div className="map-svg relative hidden md:block">
+    <div className="map-svg w-full relative justify-center items-center hidden md:flex h-full">
       {countryTooltip && (
         <h2 className="absolute bottom-[30%] left-1/2 -translate-x-1/2 bg-flushOrange text-white rounded-lg px-6 py-4">
           {countryTooltip}
@@ -16,6 +16,7 @@ const MapSvg = () => {
         viewBox="0 0 2426 1357"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        className="h-fit"
       >
         <g id="Group">
           <path
