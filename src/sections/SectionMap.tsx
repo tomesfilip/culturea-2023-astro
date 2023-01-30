@@ -3,7 +3,7 @@ import Section from '../components/shared/Section';
 
 const SectionMap = () => {
   return (
-    <Section sectionId="mapa" sectionName="Minulé ročníky">
+    <Section sectionId="mapa" sectionName="">
       <MapSvg />
     </Section>
   );

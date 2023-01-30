@@ -4,8 +4,8 @@ import Loader from '../shared/Loader';
 import BlogListItem from './BlogListItem';
 import NoBlogsFound from './NoBlogsFound';
 
-const BlogList = () => {
-  const { data: blogs, isLoading, error } = useFetchBlogList();
+const BlogListLimited = () => {
+  const { data: blogs, isLoading, error } = useFetchBlogList(3);
 
   return (
     <>
@@ -22,4 +22,4 @@ const BlogList = () => {
   );
 };
 
-export default BlogList;
+export default BlogListLimited;

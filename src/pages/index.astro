@@ -1,11 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import SectionAbout from '../sections/SectionAbout';
+import SectionBlogs from '../sections/SectionBlogs';
 import SectionHistory from '../sections/SectionHistory';
 import SectionLanding from '../sections/SectionLanding';
 import SectionMap from '../sections/SectionMap';
 import SectionOrganizer from '../sections/SectionOrganizer';
-import SectionPartners from '../sections/SectionPartners';
+// import SectionPartners from '../sections/SectionPartners';
 import SectionProgram from '../sections/SectionProgram';
 import SectionTeam from '../sections/SectionTeam';
 ---
@@ -14,9 +15,10 @@ import SectionTeam from '../sections/SectionTeam';
   <SectionLanding client:only />
   <SectionAbout />
   <SectionProgram client:only />
+  <SectionBlogs client:only />
   <SectionHistory client:only />
   <SectionMap client:only />
-  <SectionPartners />
+  <!-- <SectionPartners /> -->
   <SectionTeam client:only />
   <SectionOrganizer />
 </Layout>

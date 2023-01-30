@@ -10,8 +10,8 @@ export const menuItems: TMenuLink[] = [
     title: 'Program',
   },
   {
-    url: '/#historie',
-    title: 'Historie',
+    url: '/#clanky',
+    title: 'Články',
   },
   {
     url: '/partneri',
