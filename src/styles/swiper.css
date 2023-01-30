@@ -6,6 +6,7 @@
 .swiper-slide {
   display: flex;
   justify-content: center;
+  justify-self: center;
 }
 
 .swiper-button-prev {

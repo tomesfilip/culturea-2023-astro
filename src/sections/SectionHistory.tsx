@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import HistoryItem from '../components/history/HistoryItem';
 
 import Section from '../components/shared/Section';
 
@@ -24,16 +25,8 @@ const SectionHistory = () => {
       <div className="mb-4 dashed-border xl:mb-8"></div>
 
       <div className="w-full transition-all duration-500 history-items">
-        {historyItems.slice(0, showMaxCount).map(({ name, year }) => (
-          <div key={name} className="w-full history-item">
-            <p className="text-xl xl:text-[45px uppercase xl:leading-[60px] font-headline">
-              {name}
-            </p>
-            <p className="text-xl xl:text-[45px] font-bold xl:leading-[60px] font-headline">
-              {year}
-            </p>
-            <div className="my-4 dashed-border xl:my-8"></div>
-          </div>
+        {historyItems.slice(0, showMaxCount).map(({ name, year, photos }) => (
+          <HistoryItem key={name} name={name} year={year} photos={photos} />
         ))}
       </div>
       <button
