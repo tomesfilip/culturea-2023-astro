@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const useFetchRecipeList = () => {
+const useFetchInstagramFeed = () => {
   const [data, setData] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -44,4 +44,4 @@ const useFetchRecipeList = () => {
   return { data, isLoading, error };
 };
 
-export default useFetchRecipeList;
+export default useFetchInstagramFeed;

@@ -1,7 +1,7 @@
-import useFetchRecipeList from '../../hooks/useFetchIgFeed';
+import useFetchInstagramFeed from '../../hooks/useFetchIgFeed';
 
 const InstagramFeed = () => {
-  const { data: igPhotoFeed, isLoading, error } = useFetchRecipeList();
+  const { data: igPhotoFeed, isLoading, error } = useFetchInstagramFeed();
 
   return (
     <>
