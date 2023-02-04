@@ -9,7 +9,7 @@ const SectionBlogs = () => {
         className="text-2xl uppercase text-flushOrange border-2 rounded-lg border-flushOrange px-4 py-2 font-bold mt-8"
         href="/blogy"
       >
-        Všenchy blogy
+        Blogy
       </a>
     </Section>
   );

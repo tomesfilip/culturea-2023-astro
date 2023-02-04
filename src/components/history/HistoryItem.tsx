@@ -1,3 +1,4 @@
+import { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
@@ -16,6 +17,8 @@ const HistoryItem = ({ name, year, photos }: THistoryItem) => {
       </p>
       {photos && (
         <Swiper
+          modules={[Navigation]}
+          navigation
           loop
           autoHeight={true}
           grabCursor={true}
@@ -35,7 +38,7 @@ const HistoryItem = ({ name, year, photos }: THistoryItem) => {
           }}
         >
           {photos.map((photo, index) => (
-            <SwiperSlide key={index} className="">
+            <SwiperSlide key={index}>
               <img
                 className="object-contain object-center max-w[512px] max-h-[342px] px-4"
                 src={photo}

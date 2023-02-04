@@ -5,7 +5,7 @@ import { teamMemberItems } from '../data/teamMemberItems';
 
 const SectionTeam = () => {
   return (
-    <Section sectionId="team" sectionName="Náš team">
+    <Section sectionId="team" sectionName="Kontakty">
       <TeamMemberList teamMembers={teamMemberItems} />
     </Section>
   );

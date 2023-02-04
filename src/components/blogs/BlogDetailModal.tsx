@@ -18,7 +18,7 @@ const BlogDetailModal = ({ blog, closeModalOnClick }: Props) => {
         <ModalHeader closeModal={closeModalOnClick} />
         <h3>{blog.title}</h3>
         <img
-          className="mt-2 mb-3 w-[300px] h-[300px] rounded-lg"
+          className="mt-2 mb-3 max-w-[300px] max-h-[300px] rounded-lg object-cover"
           src={blog.bannerImage}
           alt={blog.title}
           width={300}

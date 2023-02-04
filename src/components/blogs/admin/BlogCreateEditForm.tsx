@@ -8,6 +8,7 @@ import { isCreateModalOpen } from '../../../stores/createModalStore';
 import { editBlogStore } from '../../../stores/editBlogStore';
 import { getDocRef } from '../../../utils/getBlogRef';
 import ModalHeader from '../../modal/ModalHeader';
+import Loader from '../../shared/Loader';
 import ModalOverlay from '../../shared/ModalOverlay';
 import LabelledInput from '../LabelledInput';
 
@@ -18,6 +19,7 @@ const BlogCreateEditForm = () => {
   const [imageUpload, setImageUpload] = useState<File | null>(null);
   const [imgUrl, setImgUrl] = useState<string | null>(null);
   const [error, setError] = useState<string>('');
+  const [isImageUploading, setIsImageUploading] = useState<boolean>(false);
 
   // TODO: add a loading and error indicator
   // TODO: move logic methods into separate files
@@ -25,13 +27,21 @@ const BlogCreateEditForm = () => {
     if (!imageUpload) {
       return;
     }
+
+    if (imageUpload.size > 3145728) {
+      setError('Nahrávej obrázek menší než 3MB');
+      return;
+    }
     try {
+      setIsImageUploading(true);
       const imageRef = ref(storage, `images/${imageUpload.name + v4()}`);
       const res = await uploadBytes(imageRef, imageUpload);
       const uploadedImgUrl = await getDownloadURL(res.ref);
       setImgUrl(uploadedImgUrl);
     } catch (error) {
       console.log('File upload error: ' + error);
+    } finally {
+      setIsImageUploading(false);
     }
   };
 
@@ -40,12 +50,16 @@ const BlogCreateEditForm = () => {
     if (!body) return setError('Chybějíci text blogu.');
     if (!imgUrl) return setError('Chybějící obrázek blogu.');
 
-    await addDoc(blogCollectionRef, {
-      title: title,
-      body: body,
-      bannerImage: imgUrl,
-      createdAt: new Date(),
-    });
+    try {
+      await addDoc(blogCollectionRef, {
+        title: title,
+        body: body,
+        bannerImage: imgUrl,
+        createdAt: new Date(),
+      });
+    } catch (error) {
+      console.log(error);
+    }
 
     setError('');
   };
@@ -131,6 +145,11 @@ const BlogCreateEditForm = () => {
           required={false}
           text="Obrázek"
         />
+        {isImageUploading && (
+          <div className="flex justify-center">
+            <Loader />
+          </div>
+        )}
         <LabelledInput
           name="image url"
           type="text"

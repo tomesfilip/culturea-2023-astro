@@ -19,12 +19,12 @@ const useFetchInstagramFeed = () => {
 
         const { data } = await res.json();
 
-        const ighotoFeed = data.filter(
+        const igPhotoFeed = data.filter(
           (item: any) =>
             item.media_type === 'CAROUSEL_ALBUM' || item.media_type === 'IMAGE'
         );
 
-        setData(ighotoFeed);
+        setData(igPhotoFeed);
         setError(null);
       } catch (err) {
         if (err instanceof Error) {
