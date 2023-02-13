@@ -4,6 +4,7 @@ import imgAlzbetaBlahova from '../assets/img/team/alzbeta-blahova.webp';
 import imgAndreaZylova from '../assets/img/team/andrea-zylova.webp';
 import imgHelenaPham from '../assets/img/team/helena-pham.webp';
 import imgLucieMakovska from '../assets/img/team/lucie-makovska.webp';
+import imgSaraMaskova from '../assets/img/team/sara-maskova.webp';
 import imgSimonValovic from '../assets/img/team/simon-valovic.webp';
 import imgTerezaSimova from '../assets/img/team/tereza-simova.webp';
 import imgVendulaKorinkova from '../assets/img/team/vendula-korinkova.webp';
@@ -58,11 +59,11 @@ export const teamMemberItems: TTeamMemberItem[] = [
     email: 'art@culturea.cz',
     img: imgSimonValovic,
   },
-  // {
-  // id: 7,
-  //   name: 'Sára Mašková',
-  //   position: '',
-  // email: '',
-  //   img: imgSimonValovic,
-  // },
+  {
+    id: 7,
+    name: 'Sára Mašková',
+    position: 'manažerka Proma',
+    email: 'promo@culturea.cz',
+    img: imgSaraMaskova,
+  },
 ];
