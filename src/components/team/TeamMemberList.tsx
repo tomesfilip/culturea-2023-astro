@@ -24,20 +24,17 @@ const TeamMemberList = ({ teamMembers }: Props) => {
         640: {
           slidesPerView: 2,
         },
-        768: {
+        1024: {
           slidesPerView: 3,
         },
         1200: {
           slidesPerView: 4,
         },
-        1600: {
-          slidesPerView: 5,
-        },
       }}
     >
       {teamMembers.map((teamMember, index) => (
         <SwiperSlide key={index}>
-          <figure className="flex flex-col justify-center mx-8 text-center">
+          <figure className="flex flex-col justify-center mx-2 2xl:mx-8 text-center">
             <img
               className="object-cover object-center"
               src={teamMember.img}

@@ -3,10 +3,7 @@ import Section from '../components/shared/Section';
 const SectionAbout = () => {
   return (
     <Section sectionId="o-festivalu" sectionName="O festivalu">
-      <div className="mx-auto w-full xl:w-2/5 text-center">
-        <p className="text:lg mb-4 xl:mb-8 xl:text-2xl">
-          Přijeď s námi zažít jedinečnou atmosféru do Zlína.
-        </p>
+      <div className="mx-auto w-full lg:w-3/5 xl:w-2/5 text-center">
         <p className="mb-4 xl:mb-8 text-lg xl:text-2xl">
           Culturea je festival o dvou zemích, kde se představí to nejlepší z
           nich. Místní delikatesy, národní tradice, zvyky - zkrátka vše, čím je

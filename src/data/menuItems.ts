@@ -22,7 +22,7 @@ export const menuItems: TMenuLink[] = [
     title: 'Pro media',
   },
   {
-    url: '/#kontakt',
+    url: '/#tym',
     title: 'Kontakt',
   },
 ];
