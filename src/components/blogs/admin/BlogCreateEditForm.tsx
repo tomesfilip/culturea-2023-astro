@@ -1,6 +1,8 @@
 import { addDoc, updateDoc } from 'firebase/firestore';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import { useEffect, useState } from 'react';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 import { v4 } from 'uuid';
 
 import { blogCollectionRef, storage } from '../../../config/firebase';
@@ -11,6 +13,8 @@ import ModalHeader from '../../modal/ModalHeader';
 import Loader from '../../shared/Loader';
 import ModalOverlay from '../../shared/ModalOverlay';
 import LabelledInput from '../LabelledInput';
+
+import '../../../styles/blogTextEditor.css';
 
 const BlogCreateEditForm = () => {
   const [blog] = useState<any>(editBlogStore.get());
@@ -130,13 +134,7 @@ const BlogCreateEditForm = () => {
         />
         <div className="grid gap-2">
           <p>Text</p>
-          <textarea
-            className="border-[1px] border-black rounded-lg w-full p-1"
-            name="body"
-            value={body}
-            onChange={(e) => setBody(e.target.value)}
-            required={true}
-          />
+          <ReactQuill theme="snow" value={body} onChange={setBody} />
         </div>
         <LabelledInput
           name="image"

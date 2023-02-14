@@ -1,3 +1,5 @@
+import parse from 'html-react-parser';
+
 import useMonitorAuthUser from '../../hooks/useMonitorAuthUser';
 import type { TBlogItem } from '../../lib/types/TBlogItem';
 import ModalHeader from '../modal/ModalHeader';
@@ -24,7 +26,7 @@ const BlogDetailModal = ({ blog, closeModalOnClick }: Props) => {
           width={300}
           height={300}
         />
-        <p>{blog.brief}</p>
+        <div>{parse(blog.body)}</div>
         {loggedUser && <EditDeleteActions blogId={blog.id} />}
       </div>
       )
