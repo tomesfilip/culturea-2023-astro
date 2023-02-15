@@ -2,7 +2,8 @@
   height: auto;
 }
 
-.ql-toolbar.ql-snow, .ql-container.ql-snow {
+.ql-toolbar.ql-snow,
+.ql-container.ql-snow {
   border: 1px solid black;
 }
 
@@ -10,6 +11,10 @@
   border-radius: 0.5rem 0.5rem 0 0;
 }
 
-.ql-container.ql-snow {  
+.ql-container.ql-snow {
   border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.ql-editor {
+  max-height: 200px;
 }
