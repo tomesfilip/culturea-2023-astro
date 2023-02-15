@@ -26,7 +26,7 @@ const BlogDetailModal = ({ blog, closeModalOnClick }: Props) => {
           width={300}
           height={300}
         />
-        <div className="blog-body-text overflow-y-auto max-h-[600px]">
+        <div className="blog-body-text overflow-y-scroll max-h-[600px]">
           {parse(blog.body)}
         </div>
         {loggedUser && <EditDeleteActions blogId={blog.id} />}
