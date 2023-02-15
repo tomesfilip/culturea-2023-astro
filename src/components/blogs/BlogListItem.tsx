@@ -14,14 +14,14 @@ const BlogListItem = ({ blog }: Props) => {
   const [isDetailModalOpen, setIsDetailModalOpen] = useState(false);
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col max-w-[350px]">
       <article
         onClick={() => setIsDetailModalOpen(true)}
         className="cursor-pointer"
       >
-        <h4 className="text-xl text-center mb-1 font-bold">{blog.title}</h4>
+        <h3 className="text-xl mb-1 font-bold px-1">{blog.title}</h3>
         <img
-          className="w-[300px] h-[300px] rounded-lg object-cover"
+          className="w-[350px] h-[350px] rounded-lg object-cover"
           src={blog.bannerImage}
           alt={blog.title}
           width={300}
