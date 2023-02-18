@@ -1,20 +1,8 @@
 import { useEffect, useState } from 'react';
+import useMediaQuery from '../hooks/useMediaQuery';
 
 const SectionLanding = () => {
-  const [isMobile, setIsMobile] = useState<boolean>(
-    window.innerWidth < 569 ? true : false
-  );
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 569 ? true : false);
-    };
-
-    window.addEventListener('resize', handleResize);
-    handleResize();
-
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  const isMobile: boolean = useMediaQuery(569);
 
   return (
     <video
