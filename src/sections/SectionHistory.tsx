@@ -21,7 +21,7 @@ const SectionHistory = () => {
   return (
     <Section
       sectionId="historie"
-      sectionName="Minulé ročníky"
+      sectionName="Minulý ročník"
       className="mx-auto max-w-7xl"
     >
       <div className="mb-4 dashed-border xl:mb-8"></div>

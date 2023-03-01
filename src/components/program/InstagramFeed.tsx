@@ -15,7 +15,7 @@ const InstagramFeed = () => {
               key={feedItem.id}
               href={feedItem.permalink}
               target="_blank"
-              rel="preload"
+              rel="preload noopener noreferrer"
             >
               <img
                 width={250}

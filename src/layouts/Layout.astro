@@ -40,14 +40,16 @@ const { title } = Astro.props;
 <style is:global>
   @font-face {
     font-family: GalanoGrotesqueBold;
-    src: url('../assets/fonts/GalanoGrotesqueBold.woff2') format('woff2');
+    src: url('../assets/fonts/GalanoGrotesqueBold.woff2') format('woff2'),
+      url('../assets/fonts/GalanoGrotesqueBold.ttf') format('ttf');
     font-display: swap;
     font-weight: 700;
   }
 
   @font-face {
     font-family: GalanoGrotesqueRegular;
-    src: url('../assets/fonts/GalanoGrotesqueMedium.woff2') format('woff2');
+    src: url('../assets/fonts/GalanoGrotesqueMedium.woff2') format('woff2'),
+      url('../assets/fonts/GalanoGrotesqueMedium.ttf') format('ttf');
     font-display: swap;
     font-weight: 500;
   }
