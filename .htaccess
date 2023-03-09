@@ -1,7 +1,14 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteRule 20[0-9]{2} "https://culturea.cz" [R=301,L]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule ^(.*)$ / [L,QSA]
+  Redirect "/2012" "https://culturea.cz"
+  Redirect "/2013" "https://culturea.cz"
+  Redirect "/2014" "https://culturea.cz"
+  Redirect "/2015" "https://culturea.cz"
+  Redirect "/2016" "https://culturea.cz"
+  Redirect "/2017" "https://culturea.cz"
+  Redirect "/2018" "https://culturea.cz"
+  Redirect "/2019" "https://culturea.cz"
+  Redirect "/2020" "https://culturea.cz"
+  Redirect "/2021" "https://culturea.cz"
+  Redirect "/2022" "https://culturea.cz"
 </IfModule>

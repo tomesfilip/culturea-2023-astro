@@ -1,15 +1,15 @@
 import type { THistoryItem } from '../lib/types/THistoryItem';
 
-import Img1 from '../assets/img/history/2022-1.jpg';
-import Img10 from '../assets/img/history/2022-10.jpg';
-import Img2 from '../assets/img/history/2022-2.jpg';
-import Img3 from '../assets/img/history/2022-3.jpg';
-import Img4 from '../assets/img/history/2022-4.jpg';
-import Img5 from '../assets/img/history/2022-5.jpg';
-import Img6 from '../assets/img/history/2022-6.jpg';
-import Img7 from '../assets/img/history/2022-7.jpg';
-import Img8 from '../assets/img/history/2022-8.jpg';
-import Img9 from '../assets/img/history/2022-9.jpg';
+import Img1 from '../assets/img/history/1-2022.jpg';
+import Img10 from '../assets/img/history/10-2022.jpg';
+import Img2 from '../assets/img/history/2-2022.jpg';
+import Img3 from '../assets/img/history/3-2022.jpg';
+import Img4 from '../assets/img/history/4-2022.jpg';
+import Img5 from '../assets/img/history/5-2022.jpg';
+import Img6 from '../assets/img/history/6-2022.jpg';
+import Img7 from '../assets/img/history/7-2022.jpg';
+import Img8 from '../assets/img/history/8-2022.jpg';
+import Img9 from '../assets/img/history/9-2022.jpg';
 
 export const historyItems: THistoryItem[] = [
   {
