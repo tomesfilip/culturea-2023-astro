@@ -6,6 +6,8 @@ import ModalHeader from '../modal/ModalHeader';
 import ModalOverlay from '../shared/ModalOverlay';
 import EditDeleteActions from './admin/EditDeleteActions';
 
+import '../../styles/blogItem.css';
+
 interface Props {
   blog: TBlogItem;
   closeModalOnClick: () => void;
@@ -20,7 +22,7 @@ const BlogDetailModal = ({ blog, closeModalOnClick }: Props) => {
         <div className="blog-content overflow-y-scroll mt-2">
           <h3 className="w-full text-center lg:text-left">{blog.title}</h3>
           <img
-            className="mt-2 mb-3 max-w-[300px] max-h-[300px] rounded-lg object-cover"
+            className="mt-2 mb-3 max-w-[300px] max-h-[300px] rounded-lg object-cover mx-auto sm:mx-0"
             src={blog.bannerImage}
             alt={blog.title}
             width={300}

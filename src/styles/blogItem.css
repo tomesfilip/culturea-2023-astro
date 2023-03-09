@@ -1,0 +1,12 @@
+span {
+  display: block;
+  word-wrap: break-word;
+  width: 280px;
+  white-space: normal;
+}
+
+@media only screen and (min-width: 728px) {
+  span {
+    width: 100%;
+  }
+}
