@@ -124,6 +124,9 @@ const BlogCreateEditForm = () => {
         <h4 className="text-xl text-center">
           {blog ? 'Upravit blog' : 'Přidat blog'}
         </h4>
+        <button className="bg-flushOrange px-2 py-1 text-xl text-white rounded-lg max-w-max self-center">
+          Uveřejnit blog
+        </button>
         <LabelledInput
           name="title"
           type="text"
@@ -156,9 +159,7 @@ const BlogCreateEditForm = () => {
           required={false}
           text="Url obrázku"
         />
-        <button className="bg-flushOrange px-2 py-1 text-xl text-white rounded-lg max-w-max self-center">
-          Uveřejnit blog
-        </button>
+
         {error && <p className="text-red-500">{error}</p>}
       </form>
     </ModalOverlay>

@@ -8,6 +8,10 @@
 }
 
 .ql-toolbar.ql-snow {
+  display: flex;
+}
+
+.ql-toolbar.ql-snow {
   border-radius: 0.5rem 0.5rem 0 0;
 }
 
@@ -17,4 +21,8 @@
 
 .ql-editor {
   max-height: 200px;
+}
+
+.ql-toolbar.ql-snow .ql-formats {
+  display: flex;
 }
