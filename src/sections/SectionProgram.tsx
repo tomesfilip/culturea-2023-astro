@@ -1,12 +1,13 @@
+import ExtraProgram from '../components/program/ExtraProgram';
 import InstagramFeed from '../components/program/InstagramFeed';
+import MainProgram from '../components/program/MainProgram';
 import Section from '../components/shared/Section';
 
 const SectionProgram = () => {
   return (
     <Section sectionId="program" sectionName="Program">
-      <p className="text-center uppercase text-lightOrange">
-        Program pro vás intenzivně připravujeme
-      </p>
+      <MainProgram />
+      <ExtraProgram />
       <InstagramFeed />
     </Section>
   );
