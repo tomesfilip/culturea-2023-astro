@@ -4,4 +4,5 @@ export type TTeamMemberItem = {
   position: string;
   email: string;
   img: string;
+  phone: string;
 };

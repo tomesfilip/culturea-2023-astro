@@ -16,6 +16,7 @@ export const teamMemberItems: TTeamMemberItem[] = [
     position: 'hl. manažer',
     email: 'ahoj@culturea.cz',
     img: imgLucieMakovska,
+    phone: '602 424 990',
   },
   {
     id: 1,
@@ -23,6 +24,7 @@ export const teamMemberItems: TTeamMemberItem[] = [
     position: 'hl. manažer',
     email: 'ahoj@culturea.cz',
     img: imgAndreaZylova,
+    phone: '725 617 303',
   },
   {
     id: 2,
@@ -30,6 +32,7 @@ export const teamMemberItems: TTeamMemberItem[] = [
     position: 'manažerka PR',
     email: 'pr@culturea.cz',
     img: imgAlzbetaBlahova,
+    phone: '773 952 690',
   },
   {
     id: 3,
@@ -37,6 +40,7 @@ export const teamMemberItems: TTeamMemberItem[] = [
     position: 'manažerka Fundraisingu',
     email: 'fundraising@culturea.cz',
     img: imgVendulaKorinkova,
+    phone: '736 428 059',
   },
   {
     id: 4,
@@ -44,6 +48,7 @@ export const teamMemberItems: TTeamMemberItem[] = [
     position: 'manažerka Proma',
     email: 'promo@culturea.cz',
     img: imgHelenaPham,
+    phone: '776 851 818',
   },
   {
     id: 5,
@@ -51,6 +56,7 @@ export const teamMemberItems: TTeamMemberItem[] = [
     position: 'manažerka Produkce',
     email: 'produkce@culturea.cz',
     img: imgTerezaSimova,
+    phone: '736 428 635',
   },
   {
     id: 6,
@@ -58,6 +64,7 @@ export const teamMemberItems: TTeamMemberItem[] = [
     position: 'manažer Artu',
     email: 'art@culturea.cz',
     img: imgSimonValovic,
+    phone: '+421 907 158 538 ',
   },
   {
     id: 7,
@@ -65,5 +72,6 @@ export const teamMemberItems: TTeamMemberItem[] = [
     position: 'manažerka Proma',
     email: 'promo@culturea.cz',
     img: imgSaraMaskova,
+    phone: '774 323 834',
   },
 ];

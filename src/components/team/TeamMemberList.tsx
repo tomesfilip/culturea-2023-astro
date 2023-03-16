@@ -46,7 +46,12 @@ const TeamMemberList = ({ teamMembers }: Props) => {
             <figcaption className="py-2 text-lg font-bold text-white bg-flushOrange">
               <span className="mb-2 name">{teamMember.name}</span>
               <h4 className="mb-0 capitalize">{teamMember.position}</h4>
-              <a href={`mailto:${teamMember.email}`}>{teamMember.email}</a>
+              <a className="block" href={`mailto:${teamMember.email}`}>
+                {teamMember.email}
+              </a>
+              <a className="block" href={`tel:${teamMember.phone}`}>
+                {teamMember.phone}
+              </a>
             </figcaption>
           </figure>
         </SwiperSlide>
