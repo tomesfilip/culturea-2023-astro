@@ -6,7 +6,7 @@ import type { TProgramItem } from '../../lib/types/TProgramItem';
 
 const MainProgram = () => {
   return (
-    <div className="my-8 lg:my-10 grid grid-cols-1 md:grid-cols-2 gap-y-8 gap-x-6 w-full max-w-[1200px] mx-auto">
+    <div className="my-8 lg:my-10 grid grid-cols-1 md:grid-cols-2 gap-y-8 gap-x-12 w-full max-w-[1200px] mx-auto">
       {programItems.map(
         (
           { time, headline, imgSrc, presenter, place }: TProgramItem,
