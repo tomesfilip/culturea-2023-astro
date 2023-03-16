@@ -1,7 +1,8 @@
-import ProgramItemLeft from './ProgramItemLeft';
+import ProgramItem from './ProgramItem';
+
+import type { TProgramItem } from '../../lib/types/TProgramItem';
 
 import { extraProgramItems } from '../../data/programItems';
-import type { TProgramItem } from '../../lib/types/TProgramItem';
 
 const ExtraProgram = () => {
   return (
@@ -14,7 +15,7 @@ const ExtraProgram = () => {
           { time, headline, imgSrc, presenter, place }: TProgramItem,
           index: number
         ) => (
-          <ProgramItemLeft
+          <ProgramItem
             key={time}
             time={time}
             headline={headline}

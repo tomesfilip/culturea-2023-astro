@@ -1,6 +1,8 @@
+import ProgramItem from './ProgramItem';
+
 import { programItems } from '../../data/programItems';
+
 import type { TProgramItem } from '../../lib/types/TProgramItem';
-import ProgramItemLeft from './ProgramItemLeft';
 
 const MainProgram = () => {
   return (
@@ -10,14 +12,14 @@ const MainProgram = () => {
           { time, headline, imgSrc, presenter, place }: TProgramItem,
           index: number
         ) => (
-          <ProgramItemLeft
+          <ProgramItem
             key={time}
             time={time}
             headline={headline}
             imgSrc={imgSrc}
             presenter={presenter}
             place={place}
-            rightColumned={index % 2 === 0}
+            rightColumned={index % 2 !== 0}
           />
         )
       )}

@@ -4,7 +4,7 @@ type Props = TProgramItem & {
   rightColumned?: boolean;
 };
 
-const ProgramItemLeft = ({
+const ProgramItem = ({
   time,
   headline,
   presenter,
@@ -15,12 +15,12 @@ const ProgramItemLeft = ({
   return (
     <div
       className={`flex flex-col items-center gap-1 md:gap-3 text-center md:basis-1/2 md:text-left ${
-        rightColumned ? 'md:pt-0' : 'md:pt-8'
+        rightColumned ? 'md:pt-8' : 'md:pt-0'
       }`}
     >
       <p className="font-bold text-xl md:text-2xl">{time}</p>
       <div className="flex flex-wrap flex-col lg:flex-row justify-center lg:justify-start gap-2 gap-x-4 items-center">
-        <div>
+        <div className={`${rightColumned ? 'md:order-2' : 'md:order-1'}`}>
           <p className="font-bold text-lg md:text-xl">{headline}</p>
           {presenter && (
             <p className="text-flushOrange font-medium">{presenter}</p>
@@ -31,7 +31,9 @@ const ProgramItemLeft = ({
           <img
             src={imgSrc}
             alt={presenter}
-            className="rounded-full w-[90px] h-90px]"
+            className={`rounded-full w-[90px] h-[90px] ${
+              rightColumned ? 'md:order-1' : 'md:order-2'
+            }`}
           />
         )}
       </div>
@@ -39,4 +41,4 @@ const ProgramItemLeft = ({
   );
 };
 
-export default ProgramItemLeft;
+export default ProgramItem;
