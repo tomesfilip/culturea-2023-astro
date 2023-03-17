@@ -32,7 +32,7 @@ jobs:
     - name: Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
-        server: ${{ env.FTP_SERVER }}
+        server: 27757.w57.wedos.net
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         protocol: ${{ env.FTP_PROTOCOL }}
