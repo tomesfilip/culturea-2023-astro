@@ -30,14 +30,14 @@ jobs:
       run: find dist/ -print
       
     - name: Check FTP_SERVER value
-      run: echo "FTP_SERVER is ${{ env.FTP_SERVER }}"
+      run: echo "FTP_SERVER is ${{ secrets.FTP_SERVER }}"
       
     - name: Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       env:
         FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
       with:
-        server: ${{ env.FTP_SERVER }}
+        server: ${{ secrets.FTP_SERVER }}
         username: ${{ env.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         protocol: ${{ env.FTP_PROTOCOL }}
