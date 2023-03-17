@@ -31,9 +31,11 @@ jobs:
       
     - name: Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      env:
+        FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
       with:
-        server: 27757.w57.wedos.net
-        username: ${{ secrets.FTP_USERNAME }}
+        server: ${{ env.FTP_SERVER }}
+        username: ${{ env.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         protocol: ${{ env.FTP_PROTOCOL }}
         local-dir: dist/
