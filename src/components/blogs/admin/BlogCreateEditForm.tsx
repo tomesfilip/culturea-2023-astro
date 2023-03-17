@@ -14,6 +14,7 @@ import Loader from '../../shared/Loader';
 import ModalOverlay from '../../shared/ModalOverlay';
 import LabelledInput from '../LabelledInput';
 
+import { FIREBASE_IMG_FILE_LIMIT } from '../../../lib/constants';
 import '../../../styles/blogTextEditor.css';
 
 const BlogCreateEditForm = () => {
@@ -25,14 +26,13 @@ const BlogCreateEditForm = () => {
   const [error, setError] = useState<string>('');
   const [isImageUploading, setIsImageUploading] = useState<boolean>(false);
 
-  // TODO: add a loading and error indicator
   // TODO: move logic methods into separate files
   const uploadImage = async () => {
     if (!imageUpload) {
       return;
     }
 
-    if (imageUpload.size > 3145728) {
+    if (imageUpload.size > FIREBASE_IMG_FILE_LIMIT) {
       setError('Nahrávej obrázek menší než 3MB');
       return;
     }
