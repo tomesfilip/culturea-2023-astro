@@ -1,0 +1,35 @@
+name: Deploy website on main push to FTP
+
+on:
+  push:
+    branches:
+      - main
+      
+jobs:
+  web-deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: Get latest code
+      uses: actions/checkout@v3
+
+    - name: Use Node.js 16
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+      
+    - name: Build Project
+      run: npm ci && npm run build
+    
+    - name: List output files
+      run: find dist/ -print
+      
+    - name: Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ${{ env.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        protocol: ${{ env.FTP_PROTOCOL }}
+        local-dir: dist/
+        server-dir: /2048/
