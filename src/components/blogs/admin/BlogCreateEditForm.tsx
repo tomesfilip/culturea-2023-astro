@@ -1,11 +1,8 @@
 import { addDoc, updateDoc } from 'firebase/firestore';
-import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import { useEffect, useState } from 'react';
 import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
-import { v4 } from 'uuid';
 
-import { blogCollectionRef, storage } from '../../../config/firebase';
+import { blogCollectionRef } from '../../../config/firebase';
 import { isCreateModalOpen } from '../../../stores/createModalStore';
 import { editBlogStore } from '../../../stores/editBlogStore';
 import { getDocRef } from '../../../utils/getBlogRef';
@@ -14,39 +11,26 @@ import Loader from '../../shared/Loader';
 import ModalOverlay from '../../shared/ModalOverlay';
 import LabelledInput from '../LabelledInput';
 
+import 'react-quill/dist/quill.snow.css';
 import '../../../styles/blogTextEditor.css';
+import { uploadImage } from '../../../utils/uploadImage';
 
 const BlogCreateEditForm = () => {
   const [blog] = useState<any>(editBlogStore.get());
   const [title, setTitle] = useState<string>('');
   const [body, setBody] = useState<string>('');
-  const [imageUpload, setImageUpload] = useState<File | null>(null);
+  const [image, setImage] = useState<File | null>(null);
   const [imgUrl, setImgUrl] = useState<string | null>(null);
   const [error, setError] = useState<string>('');
   const [isImageUploading, setIsImageUploading] = useState<boolean>(false);
 
-  // TODO: add a loading and error indicator
-  // TODO: move logic methods into separate files
-  const uploadImage = async () => {
-    if (!imageUpload) {
-      return;
-    }
-
-    if (imageUpload.size > 3145728) {
-      setError('Nahrávej obrázek menší než 3MB');
-      return;
-    }
-    try {
-      setIsImageUploading(true);
-      const imageRef = ref(storage, `images/${imageUpload.name + v4()}`);
-      const res = await uploadBytes(imageRef, imageUpload);
-      const uploadedImgUrl = await getDownloadURL(res.ref);
-      setImgUrl(uploadedImgUrl);
-    } catch (error) {
-      console.log('File upload error: ' + error);
-    } finally {
-      setIsImageUploading(false);
-    }
+  const handleImageUpload = async () => {
+    await uploadImage({
+      image,
+      setImgUrl,
+      setError,
+      setIsImageUploading,
+    });
   };
 
   const createBlog = async () => {
@@ -96,10 +80,10 @@ const BlogCreateEditForm = () => {
   };
 
   useEffect(() => {
-    if (imageUpload) {
-      uploadImage();
+    if (image) {
+      handleImageUpload();
     }
-  }, [imageUpload]);
+  }, [image]);
 
   useEffect(() => {
     if (blog) {
@@ -142,7 +126,7 @@ const BlogCreateEditForm = () => {
         <LabelledInput
           name="image"
           type="file"
-          onChange={(e) => setImageUpload(e.target.files[0])}
+          onChange={(e) => setImage(e.target.files[0])}
           required={false}
           text="Obrázek"
         />
