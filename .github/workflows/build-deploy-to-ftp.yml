@@ -13,8 +13,18 @@ jobs:
     - name: Get latest code
       uses: actions/checkout@v3
       
+    - name: Set Node.js 16.x
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16.x
+
+    - name: Run install
+      uses: borales/actions-yarn@v4
+      with:
+        cmd: install # will run `yarn install` command
+      
     - name: Build Project
-      run: npm ci && npm run build
+      run: yarn install --frozen-lockfile && yarn run build
     
     - name: List output files
       run: find dist/ -print
