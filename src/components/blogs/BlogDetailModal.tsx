@@ -19,7 +19,7 @@ const BlogDetailModal = ({ blog, closeModalOnClick }: Props) => {
     <ModalOverlay>
       <div className="flex flex-col items-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 bg-white rounded-lg p-4 md:p-8 w-11/12 md:w-4/5 lg:w-3/5 h-[90vh] md:h-[85vh] lg:h-[80vh]">
         <ModalHeader closeModal={closeModalOnClick} />
-        <div className="blog-content overflow-y-scroll mt-2">
+        <div className="blog-content overflow-y-scroll mt-2 max-w-full break-words">
           <h3 className="w-full text-center lg:text-left">{blog.title}</h3>
           <img
             className="mt-2 mb-3 max-w-[300px] max-h-[300px] rounded-lg object-cover mx-auto sm:mx-0"
