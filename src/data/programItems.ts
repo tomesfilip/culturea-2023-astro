@@ -1,10 +1,9 @@
 import type { TProgramItem } from '../lib/types/TProgramItem';
 
-import dobesImg from '../assets/img/program/dobes.png';
 import gombaImg from '../assets/img/program/gomba.png';
 import kovarImg from '../assets/img/program/kovar.png';
 import misikovaImg from '../assets/img/program/misikova.png';
-import mlynarImg from '../assets/img/program/mlynar.png';
+import mlynarDobesImg from '../assets/img/program/mlynar-dobes.png';
 import sebastianImg from '../assets/img/program/sebestian1.png';
 import svaricekImg from '../assets/img/program/svaricek.png';
 
@@ -28,13 +27,13 @@ export const programItems: TProgramItem[] = [
   {
     time: '15:20',
     headline: 'Stopování jako životní styl',
-    presenter: 'Šebastian Bok',
+    presenter: 'Šebestian Bok',
     imgSrc: sebastianImg,
   },
   {
     time: '16:30',
-    headline: 'Dánském pěšky',
-    presenter: 'Kateřina Misiková',
+    headline: 'Dánskem pěšky',
+    presenter: 'Kateřina Misíková',
     imgSrc: misikovaImg,
   },
   {
@@ -47,7 +46,7 @@ export const programItems: TProgramItem[] = [
     time: '18:50',
     headline: '10denní stopovací akce po Evropě',
     presenter: 'Mára Mlynář a Maty Dobeš',
-    imgSrc: mlynarImg,
+    imgSrc: mlynarDobesImg,
   },
   {
     time: '20:00 - 02:00',
