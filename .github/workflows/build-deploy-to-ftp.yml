@@ -29,6 +29,9 @@ jobs:
     - name: List output files
       run: find dist/ -print
       
+    - name: Check FTP_SERVER value
+      run: echo "FTP_SERVER is ${{ env.FTP_SERVER }}"
+      
     - name: Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       env:
