@@ -4,4 +4,5 @@ export type TProgramItem = {
   presenter?: string;
   imgSrc?: string;
   place?: string;
+  additionalInfo?: string;
 };

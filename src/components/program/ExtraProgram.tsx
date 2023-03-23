@@ -12,7 +12,14 @@ const ExtraProgram = () => {
       </h4>
       {extraProgramItems.map(
         (
-          { time, headline, imgSrc, presenter, place }: TProgramItem,
+          {
+            time,
+            headline,
+            imgSrc,
+            presenter,
+            place,
+            additionalInfo,
+          }: TProgramItem,
           index: number
         ) => (
           <ProgramItem
@@ -23,6 +30,7 @@ const ExtraProgram = () => {
             presenter={presenter}
             place={place}
             rightColumned={index % 2 === 0}
+            additionalInfo={additionalInfo}
           />
         )
       )}

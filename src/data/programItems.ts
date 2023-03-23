@@ -60,5 +60,6 @@ export const extraProgramItems: TProgramItem[] = [
     time: '5. 4. 2023 v 18:00',
     headline: 'Workshop malování Hennou',
     place: 'Café 204 Zlín',
+    additionalInfo: ' vstup 79 Kč',
   },
 ];
