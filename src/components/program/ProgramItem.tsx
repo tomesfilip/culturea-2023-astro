@@ -11,6 +11,7 @@ const ProgramItem = ({
   imgSrc,
   place,
   rightColumned,
+  additionalInfo,
 }: Props) => {
   return (
     <div
@@ -32,6 +33,7 @@ const ProgramItem = ({
             <p className="text-flushOrange font-medium">{presenter}</p>
           )}
           {place && <p className="text-flushOrange font-medium">{place}</p>}
+          {additionalInfo && <p className="text-sm">{additionalInfo}</p>}
         </div>
         {imgSrc && (
           <img
