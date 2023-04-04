@@ -1,65 +1,50 @@
 import type { TPartnerItem } from '../lib/types/TPartnerItem';
 
-import partnerTempLogo from '../assets/img/icons/partner-logo-placeholder.svg';
-
-export const generalPartner: TPartnerItem = {
-  imgSrc: partnerTempLogo,
-  imgAlt: 'partner temp',
-};
-
-export const mainPartners: TPartnerItem[] = [
-  {
-    imgSrc: partnerTempLogo,
-    imgAlt: 'partner temp',
-  },
-];
-
-export const medialPartners: TPartnerItem[] = [
-  {
-    imgSrc: partnerTempLogo,
-    imgAlt: 'partner temp',
-  },
-];
+import cestovatelskyObchod from '../assets/img/sponsors/cestovatelsky-obchod.webp';
+import edo from '../assets/img/sponsors/edo.png';
+import gsi from '../assets/img/sponsors/gsi.webp';
+import isProdukce from '../assets/img/sponsors/is-produkce.jpeg';
+import kiss from '../assets/img/sponsors/kiss.png';
+import lyofood from '../assets/img/sponsors/lyofood.svg';
+import smysluplneRozhovory from '../assets/img/sponsors/smysluplne-rozhovory-logo.png';
+import zlinLuhacovice from '../assets/img/sponsors/zlin-luhacovice.png';
+import zlin from '../assets/img/sponsors/zlin.svg';
 
 export const partnerList: TPartnerItem[] = [
   {
-    imgSrc: partnerTempLogo,
-    imgAlt: 'partner temp',
+    imgSrc: zlin,
+    imgAlt: 'Zlín',
   },
   {
-    imgSrc: partnerTempLogo,
-    imgAlt: 'partner temp',
+    imgSrc: cestovatelskyObchod,
+    imgAlt: 'Cestovatelský obchod',
   },
   {
-    imgSrc: partnerTempLogo,
-    imgAlt: 'partner temp',
+    imgSrc: edo,
+    imgAlt: 'edo',
   },
   {
-    imgSrc: partnerTempLogo,
-    imgAlt: 'partner temp',
+    imgSrc: gsi,
+    imgAlt: 'gsi',
   },
   {
-    imgSrc: partnerTempLogo,
-    imgAlt: 'partner temp',
+    imgSrc: isProdukce,
+    imgAlt: 'is-produkce',
   },
   {
-    imgSrc: partnerTempLogo,
-    imgAlt: 'partner temp',
+    imgSrc: lyofood,
+    imgAlt: 'lyofood',
   },
   {
-    imgSrc: partnerTempLogo,
-    imgAlt: 'partner temp',
+    imgSrc: smysluplneRozhovory,
+    imgAlt: 'Smysluplné rozhovory',
   },
   {
-    imgSrc: partnerTempLogo,
-    imgAlt: 'partner temp',
+    imgSrc: zlinLuhacovice,
+    imgAlt: 'Zlín a Luhačovice',
   },
   {
-    imgSrc: partnerTempLogo,
-    imgAlt: 'partner temp',
-  },
-  {
-    imgSrc: partnerTempLogo,
-    imgAlt: 'partner temp',
+    imgSrc: kiss,
+    imgAlt: 'rádio Kiss',
   },
 ];
