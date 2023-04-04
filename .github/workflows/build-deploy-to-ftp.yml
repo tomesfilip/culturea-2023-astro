@@ -1,0 +1,40 @@
+name: Deploy website on main push to FTP
+
+on:
+  push:
+    branches:
+      - main
+      
+jobs:
+  web-deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: Get latest code
+      uses: actions/checkout@v3
+      
+    - name: Set Node.js 16.x
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16.x
+
+    - name: Run install
+      uses: borales/actions-yarn@v4
+      with:
+        cmd: install # will run `yarn install` command
+      
+    - name: Build Project
+      run: yarn install --frozen-lockfile && yarn run build
+    
+    - name: List output files
+      run: find dist/ -print
+      
+    - name: Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USER }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        protocol: ${{ env.FTP_PROTOCOL }}
+        local-dir: dist/
+        server-dir: /
