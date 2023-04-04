@@ -37,4 +37,4 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         protocol: ${{ env.FTP_PROTOCOL }}
         local-dir: dist/
-        server-dir: /2048/
+        server-dir: /
