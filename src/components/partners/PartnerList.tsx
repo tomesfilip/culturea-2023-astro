@@ -6,7 +6,7 @@ interface Props {
 
 const PartnerList = ({ partners }: Props) => {
   return (
-    <div className="grid grid-cols-2 xl:grid-cols-5 gap-x-3 xl:gap-x-12 gap-y-3 xl:gap-y-8">
+    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-8 xl:gap-x-12 gap-y-8 items-center justify-center">
       {partners.map(({ imgSrc, imgAlt }, index) => (
         <img key={index} src={imgSrc} alt={imgAlt} width={254} height={254} />
       ))}

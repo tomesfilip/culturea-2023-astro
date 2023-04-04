@@ -1,21 +1,15 @@
 import type { TMediaItem } from '../lib/types/TMediaItem';
 
 import mediaFile from '../assets/img/icons/media-file.svg';
-import mediaPic from '../assets/img/icons/media-pic.svg';
 import mediaVisual from '../assets/img/icons/media-visual.svg';
+import tiskovaZprava from '../assets/pdf/TZ_Culturea_2023.pdf';
 
 export const mediaItems: TMediaItem[] = [
   {
     imgSrc: mediaFile,
     imgAlt: 'soubor',
     text: 'Tiskové zprávy',
-    link: '',
-  },
-  {
-    imgSrc: mediaPic,
-    imgAlt: 'obrázek',
-    text: 'Fotografie ke stažení',
-    link: '',
+    link: tiskovaZprava,
   },
   {
     imgSrc: mediaVisual,
